@@ -61,14 +61,29 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('fecha_de_nacimiento') ? ' has-error' : '' }}">
-                            <label for="fecha_de_nacimiento" class="col-md-4 control-label">Fecha de nacimiento</label>
+                            <label for="fecha_de_nacimiento" class="col-md-4 control-label">Fecha de Nacimiento</label>
 
                             <div class="col-md-6">
-                                <input id="fecha_de_nacimiento" type="date" class="form-control" name="fecha_de_nacimiento" value="{{ old('email') }}" required>
+                                <input id="name" type="text" class="form-control" name="fecha_de_nacimiento" value="{{ old('fecha_de_nacimiento') }}" required autofocus>
 
                                 @if ($errors->has('fecha_de_nacimiento'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('fecha_de_nacimiento') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('genero') ? ' has-error' : '' }}">
+                            <label for="genero" class="col-md-4 control-label">Genero</label>
+
+                            <div class="col-md-6">
+                                <input  type="radio"  name="genero" value="F" checked>Femenino
+                                <input  type="radio"  name="genero" value="M" >Masculino
+
+                                @if ($errors->has('genero'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('genero') }}</strong>
                                     </span>
                                 @endif
                             </div>
